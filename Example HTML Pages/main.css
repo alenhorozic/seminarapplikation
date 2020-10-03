@@ -58,16 +58,6 @@ body {
 #main-menu {
 	display:flex;
 }
-#main-menu ul {
-	flex-grow: 1;
-	display: flex;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-#main-menu li {
-	flex-grow: 1;
-}
 
 #main-menu a {
 	flex-grow:1;
@@ -87,12 +77,11 @@ body {
 
 #pocetna {
 	color:#ffffff;
-  text-align: center;
-  background-image:
-  url("https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?cs=srgb&dl=pexels-luis-quintero-2774556.jpg&fm=jpg");
+	text-align: center;
+	background:src=("assets/bg01.jpeg");
 	background-size: cover;
 	position: relative;
-  background-attachment:fixed;
+	background-attachment:fixed;
 }
 
 #pocetna {
@@ -101,7 +90,7 @@ body {
 	font-size:50px;
 }
 .dark-box {
-	background-color: #05050590;
+	background-color: #33333390;
 	border:1px solid #ffffff;
 	font-size:25px;
 	padding:40px;
@@ -110,7 +99,7 @@ body {
 	list-style-type: none;
 }
 .side-box {
-	background-color: #05050590;
+	background-color: #33333390;
 	border:1px solid #ffffff;
 	font-size:25px;
 	padding: 40px;
@@ -177,7 +166,7 @@ body {
 	#social-holder {
 		text-align: center;
 	}
-	#main-menu ul {
+	#main-menu {
 		flex-direction: column;
 	}
 	.footer > .column {
@@ -209,12 +198,5 @@ body {
 		.dark-box {
 		height:min-content;
 		margin-bottom: 10px;
-  }
-  .footer .footer-column {
-    padding-top: 5px;
-    padding-bottom: 0px;
-  }
-  .footer {
-  margin-bottom: 20px;
-  }
+	}
 }
