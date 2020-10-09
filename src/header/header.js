@@ -42,7 +42,7 @@ export default function header() {
 		   
 		   <nav id="main-menu">
 			    <ul>
-					<HeaderItem text="HomePage" class="active" url=""/>
+					<HeaderItem text="HomePage" className="active" url=""/>
 					<HeaderItem text="Seminars" url=""/>
 					<HeaderItem text="InfoSeminar" url=""/>
 			    </ul>

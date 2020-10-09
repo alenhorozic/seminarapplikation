@@ -10,7 +10,7 @@ function App() {
   return (
   <div>
 	  <Header/>
-	    <Viewer  toDisplay="infoSeminar" />
+	    <Viewer  toDisplay="homePage" />
 	  <Footer/>
   </div>
   );
