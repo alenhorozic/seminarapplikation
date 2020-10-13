@@ -1,36 +1,41 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default function seminars() {
+export default class seminars extends Component {
+   constructor() {
+      super();
+      this.state = {seminars: [] };
+   }
+   componentDidMount() {
+      this.fetchSeminars();
+   }
+   fetchSeminars() {
+      fetch("https://localhost:5001/api/seminars/")
+      .then((response)=>response.json())
+      .then((json)=>this.setState({seminars: json}))
+   }
+   handleClickEvent(id) {
+      console.log(id);
+   }
+   render(){
     return (
-        <div  class="page" id="pocetna">
-	    <div class="column" id="column-grid">
-		     <div class="dark-box" id="grid-a">
+        <div  className="page" id="pocetna">
+	    <div className="column" id="column-grid">
+		     <div className="dark-box" id="grid-a">
                 <h1>Sing-To-Seminar</h1>                       
                 <ul>
-                    <li>                           
-                       <a class="red-text" href="infoSeminar.html">Web Applikation 2020</a> 
-                    </li>
-                    <li>
-                       <a class="red-text" href="#">Living ECO</a>
-                    </li>
-                    <li>
-                       <a class="red-text" href="#">Industri And People</a>
-                    </li>
-                    <li>
-                       <a class="red-text" href="#">PHP7 And Dewelopment</a>
-                    </li>
-                    <li>
-                        <a class="red-text" href="#">Internet ToMorow</a>
-                    </li>
+                    {this.state.seminars.map((item) => (
+                    <li key={item.id} onClick={() => this.handleClickEvent(item.id)}>{item.name}</li>
+                    ))}
                 </ul> 
 			 </div>
-			 <div class="side-box" id="grid-b">
+			 <div className="side-box" id="grid-b">
                 <h4>Email</h4>
-				 <a class="red-text" href="#">Info</a><br></br>
-				 <a class="red-text" href="#">Support</a><br></br>
-				 <a class="red-text" href="#">Booking</a>
+				 <a className="red-text" href="">Info</a><br></br>
+				 <a className="red-text" href="">Support</a><br></br>
+				 <a className="red-text" href="">Booking</a>
 			 </div>
 		</div>
 	  </div>
     )
+   } 
 }

@@ -20,7 +20,7 @@ export default function viewer(props) {
         case "infoSeminar":
             return (
                 <>
-                 <InfoSeminar/>  
+                 <InfoSeminar id={2} />  
                 </>
             );    
     }

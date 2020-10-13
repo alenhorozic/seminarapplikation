@@ -1,25 +1,56 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default function infoSeminar() {
+export default class infoSeminar extends Component {
+	constructor() {
+		super();
+		this.state = {seminars:null};
+	 }
+	 componentDidMount() {
+		this.fetchSeminar();
+	 }
+	 fetchSeminar() {
+		fetch("https://localhost:5001/api/seminars/"+this.props.id)
+		.then((response)=>response.json())
+		.then((json)=>this.setState({seminar: json}))
+	 }
+
+	render(){
     return (
-        <div class="page" id="pocetna">
-	    <div class="column" id="column-grid">
-		     <div class="dark-box" id="grid-a">
-                <h1>Web Applikation 2020</h1>
-                <h4>Topic:</h4>
-                <h4>Speaker:</h4>
-                <h4>Date And Clock:</h4>
-                <h4>Duration Time:</h4>
-                <h4>Address:</h4>
-                <h4>Sal:</h4> 
+        <div className="page" id="pocetna">
+	    <div className="column" id="column-grid">
+		     <div className="dark-box" id="grid-a">
+				 {this.state.seminar != null ? 
+                <h1>{this.state.seminar.name}</h1> : null}
+
+                 {this.state.seminar != null ? 
+                <h4>Topic: {this.state.seminar.topic}</h4> : null}
+
+                 {this.state.seminar != null ? 
+                <h4>Speaker: {this.state.seminar.speaker}</h4> : null}
+
+                 {this.state.seminar != null ?
+                <h4>Date And Clock: {this.state.seminar.dateAndTime}</h4> : null}
+
+                 {this.state.seminar != null ?
+                <h4>Duration Time: {this.state.seminar.durationTime}</h4> : null}
+
+                 {this.state.seminar != null ?
+                <h4>Address: {this.state.seminar.address}</h4> : null}
+
+                {this.state.seminar != null ?
+                <h4>Sal: {this.state.seminar.sal}</h4> : null}
+
+                 {this.state.seminar != null ?
+                <h4>Seats: {this.state.seminar.numberOfSeats}</h4> : null}
 			 </div>
-			 <div class="side-box" id="grid-b">
+			 <div className="side-box" id="grid-b">
 				 <h4>Email</h4>
-				 <a class="red-text" href="#">Info</a><br></br>
-				 <a class="red-text" href="#">Support</a><br></br>
-				 <a class="red-text" href="#">Booking</a>
+				 <a className="red-text" href="#">Info</a><br></br>
+				 <a className="red-text" href="#">Support</a><br></br>
+				 <a className="red-text" href="#">Booking</a>
 			 </div>
 		</div>
 	  </div>
-    )
+	)
+  }
 }
