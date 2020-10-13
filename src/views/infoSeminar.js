@@ -9,9 +9,11 @@ export default class infoSeminar extends Component {
 		this.fetchSeminar();
 	 }
 	 fetchSeminar() {
+		 if(this.props.id) {
 		fetch("https://localhost:5001/api/seminars/"+this.props.id)
 		.then((response)=>response.json())
-		.then((json)=>this.setState({seminar: json}))
+		.then((json)=>this.setState({seminar: json}));
+		 }
 	 }
 
 	render(){

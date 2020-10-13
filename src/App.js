@@ -1,18 +1,17 @@
-import React from 'react';
-import './app.css';
+import React, { useState } from "react";
+import "./App.css";
 import Header from "./header/header";
 import Footer from "./footer/footer";
 import Viewer from "./views/viewer";
 
-
-
 function App() {
+  const [menuItemClicked, setMenuItemClicked] = useState("HomePage");
   return (
-  <div>
-	  <Header/>
-	    <Viewer  toDisplay="infoSeminar" />
-	  <Footer/>
-  </div>
+    <div>
+      <Header onClick={(text) => setMenuItemClicked(text)} />
+      <Viewer toDisplay={menuItemClicked} />
+      <Footer />
+    </div>
   );
 }
 

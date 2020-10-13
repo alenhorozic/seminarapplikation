@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
 export default function headerItem(props) {
-    return (
-        <li>
-			<a href="" >{props.text}</a>
-		</li>
-    )
+  return (
+    <li>
+      <a onClick={() => props.onClick(props.text)}>{props.text}</a>
+    </li>
+  );
 }
