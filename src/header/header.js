@@ -20,17 +20,17 @@ export default function header(props) {
           </div>
 
           <div id="social-holder">
-            <a href="#">
+            <a href="https://www.facebook.com/">
               <img alt="Facebook" src={facebook}></img>
             </a>
-            <a href="#">
-              <img alt="Twitet" src={twitter}></img>
+            <a href="https://twitter.com/">
+              <img alt="Twiter" src={twitter}></img>
             </a>
-            <a href="#">
+            <a href="https://www.instagram.com/">
               <img alt="Instagram" src={instagram}></img>
             </a>
 
-            <a href="#">
+            <a href="https://global.com/">
               <img alt="Global" src={global}></img>
             </a>
           </div>

@@ -8,6 +8,11 @@ export default class infoSeminar extends Component {
 	 componentDidMount() {
 		this.fetchSeminar();
 	 }
+	 componentDidUpdate(prevProp) {
+		if(this.props.id !== prevProp.id){
+			this.fetchSeminar();
+		}
+	 }
 	 fetchSeminar() {
 		 if(this.props.id) {
 		fetch("https://localhost:5001/api/seminars/"+this.props.id)
@@ -47,9 +52,9 @@ export default class infoSeminar extends Component {
 			 </div>
 			 <div className="side-box" id="grid-b">
 				 <h4>Email</h4>
-				 <a className="red-text" href="#">Info</a><br></br>
-				 <a className="red-text" href="#">Support</a><br></br>
-				 <a className="red-text" href="#">Booking</a>
+				 <a className="red-text" href="mailto:info@signtoseminar.com">Info</a><br></br>
+				 <a className="red-text" href="mailto:support@signtoseminar.com">Support</a><br></br>
+				 <a className="red-text" href="mailto:booking@signtoseminar.com">Booking</a>
 			 </div>
 		</div>
 	  </div>

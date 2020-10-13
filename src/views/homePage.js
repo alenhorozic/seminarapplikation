@@ -14,9 +14,9 @@ export default function homePage() {
 			    </div>
 			    <div className="side-box" id="grid-b">
 				    <h4>Email</h4>
-				    <a className="red-text" href="#">Info</a><br></br>
-				    <a className="red-text" href="#">Support</a><br></br>
-				    <a className="red-text" href="#">Booking</a>
+				    <a className="red-text" href="mailto:info@signtoseminar.com">Info</a><br></br>
+				    <a className="red-text" href="mailto:support@signtoseminar.com">Support</a><br></br>
+				    <a className="red-text" href="mailto:booking@signtoseminar.com">Booking</a>
 			    </div>
 		    </div>
 	    </div>
