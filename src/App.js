@@ -1,18 +1,35 @@
-import React, { useState } from "react";
-import "./App.css";
-import Header from "./header/header";
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 import Footer from "./footer/footer";
-import Viewer from "./views/viewer";
+import Header from "./header/header";
+import HomePage from "./views/homePage";
+import InfoSeminar from "./views/infoSeminar";
+import Seminars from "./views/seminars";
+import MenuLink from "./header/MenuLink/menuLink";
 
-function App() {
-  const [menuItemClicked, setMenuItemClicked] = useState("HomePage");
+export default function App() {
   return (
-    <div>
-      <Header onClick={(text) => setMenuItemClicked(text)} />
-      <Viewer toDisplay={menuItemClicked} />
+    <Router>
+      <Header />
+              <MenuLink link="/" name="HomePage" />
+              <MenuLink link="/seminars" name="Seminars" />
+              <MenuLink link="/infoSeminar" name="InfoSeminar" />     
+        <Switch>
+          <Route path="/seminars">
+            <Seminars />
+          </Route>
+          <Route path="/infoSeminar">
+            <InfoSeminar />
+          </Route>
+          <Route path="/">
+            <HomePage />
+          </Route>
+        </Switch>
       <Footer />
-    </div>
+    </Router>
   );
 }
-
-export default App;

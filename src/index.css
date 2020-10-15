@@ -13,7 +13,7 @@ body {
 }
 
 .column {
-	/*border: 1px solid black;*/
+	/* border: 1px solid black; */
 	width: 1000px;
 	margin: 0px auto;
 }
@@ -54,7 +54,6 @@ body {
 	width: 24px;
 	margin:5px;
 }
-
 #main-menu {
 	display:flex;
 }

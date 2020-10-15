@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class seminars extends Component {
+export default class Seminars extends Component {
    constructor() {
       super();
       this.state = {seminars: [] };

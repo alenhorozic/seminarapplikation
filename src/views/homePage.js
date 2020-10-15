@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function homePage() {
+export default function HomePage() {
     return (
         <div className="page" id="pocetna"> 
 	        <div className="column" id="column-grid">
@@ -10,7 +10,7 @@ export default function homePage() {
                    you can edit seminar</p>
 			       <p>Like visitor you can se all komming seminar and se info about this 
 				   you can book your cher on seminar</p>
-				   <a className="red-text" href="seminars.html">Go To Seminars</a>
+				   <a className="red-text" href="http://localhost:3000/seminars">Go To Seminars</a>
 			    </div>
 			    <div className="side-box" id="grid-b">
 				    <h4>Email</h4>
@@ -20,5 +20,5 @@ export default function homePage() {
 			    </div>
 		    </div>
 	    </div>
-    )
+	)
 }

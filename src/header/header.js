@@ -1,12 +1,12 @@
-import React from "react";
+import React, { Component } from "react";
 import logo from "./logo.png";
 import facebook from "./facebook-circular-logo.svg";
 import twitter from "./twitter.svg";
 import instagram from "./instagram.svg";
 import global from "./global.svg";
-import HeaderItem from "./headerItem/headerItem";
 
-export default function header(props) {
+export default class  Header extends Component {
+  render(){
   return (
     <div className="header">
       <div className="column">
@@ -35,24 +35,8 @@ export default function header(props) {
             </a>
           </div>
         </div>
-
-        <nav id="main-menu">
-          <ul>
-            <HeaderItem
-              onClick={(text) => props.onClick(text)}
-              text="HomePage"
-            />
-            <HeaderItem
-              onClick={(text) => props.onClick(text)}
-              text="Seminars"
-            />
-            <HeaderItem
-              onClick={(text) => props.onClick(text)}
-              text="InfoSeminar"
-            />
-          </ul>
-        </nav>
       </div>
     </div>
   );
+  }
 }

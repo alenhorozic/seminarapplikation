@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class infoSeminar extends Component {
+export default class InfoSeminar extends Component {
 	constructor() {
 		super();
 		this.state = {seminars:null};
@@ -9,17 +9,17 @@ export default class infoSeminar extends Component {
 		this.fetchSeminar();
 	 }
 	 componentDidUpdate(prevProp) {
-		if(this.props.id !== prevProp.id){
+		/*if(this.props.id !== prevProp.id){*/
 			this.fetchSeminar();
 		}
-	 }
+	/* }*/
 	 fetchSeminar() {
-		 if(this.props.id) {
-		fetch("https://localhost:5001/api/seminars/"+this.props.id)
+		/* if(this.props.id) {*/
+		fetch("https://localhost:5001/api/seminars/2"/*+this.props.id*/)
 		.then((response)=>response.json())
 		.then((json)=>this.setState({seminar: json}));
 		 }
-	 }
+	/*}*/
 
 	render(){
     return (
