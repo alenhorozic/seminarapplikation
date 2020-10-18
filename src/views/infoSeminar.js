@@ -1,11 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class InfoSeminar extends Component {
-	constructor() {
+	
+	constructor(props) {
 		super();
-		this.state = {seminars:null};
+		// this.state = {seminars:null};
+		this.state = {params: props.match.params};
 	 }
 	 componentDidMount() {
+		console.log(this.props.match.params.id)
 		this.fetchSeminar();
 	 }
 	 componentDidUpdate(prevProp) {
@@ -15,7 +18,7 @@ export default class InfoSeminar extends Component {
 	/* }*/
 	 fetchSeminar() {
 		/* if(this.props.id) {*/
-		fetch("https://localhost:5001/api/seminars/2"/*+this.props.id*/)
+		fetch("https://localhost:5001/api/seminars/" + this.state.params.id)
 		.then((response)=>response.json())
 		.then((json)=>this.setState({seminar: json}));
 		 }

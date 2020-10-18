@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 
 export default class Seminars extends Component {
-   constructor() {
+   constructor(props) {
       super();
       this.state = {seminars: [] };
    }
@@ -24,7 +25,7 @@ export default class Seminars extends Component {
                 <h1>Sing-To-Seminar</h1>                       
                 <ul>
                     {this.state.seminars.map((item) => (
-                    <li key={item.id} onClick={() => this.handleClickEvent(item.id)}>{item.name}</li>
+                    <li key={item.id} ><Link className="red-text" to={`/infoSeminar/${item.id}`}>{item.name}</Link></li>
                     ))}
                 </ul> 
 			 </div>

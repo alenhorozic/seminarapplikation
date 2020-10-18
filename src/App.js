@@ -22,9 +22,7 @@ export default function App() {
           <Route path="/seminars">
             <Seminars />
           </Route>
-          <Route path="/infoSeminar">
-            <InfoSeminar />
-          </Route>
+          <Route path="/infoSeminar/:id" component={InfoSeminar} />            
           <Route path="/">
             <HomePage />
           </Route>

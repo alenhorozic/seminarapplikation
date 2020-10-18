@@ -154,6 +154,7 @@ body {
 .red-text {
 	text-decoration: none;
 	color: #dc0101;
+	font-weight: bold;
 }
 .red-text:hover{
 	text-decoration: underline;
