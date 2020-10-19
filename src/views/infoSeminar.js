@@ -4,7 +4,6 @@ export default class InfoSeminar extends Component {
 	
 	constructor(props) {
 		super();
-		// this.state = {seminars:null};
 		this.state = {params: props.match.params};
 	 }
 	 componentDidMount() {
@@ -12,17 +11,13 @@ export default class InfoSeminar extends Component {
 		this.fetchSeminar();
 	 }
 	 componentDidUpdate(prevProp) {
-		/*if(this.props.id !== prevProp.id){*/
 			this.fetchSeminar();
 		}
-	/* }*/
 	 fetchSeminar() {
-		/* if(this.props.id) {*/
 		fetch("https://localhost:5001/api/seminars/" + this.state.params.id)
 		.then((response)=>response.json())
 		.then((json)=>this.setState({seminar: json}));
 		 }
-	/*}*/
 
 	render(){
     return (
@@ -54,10 +49,21 @@ export default class InfoSeminar extends Component {
                 <h4>Seats: {this.state.seminar.numberOfSeats}</h4> : null}
 			 </div>
 			 <div className="side-box" id="grid-b">
-				 <h4>Email</h4>
-				 <a className="red-text" href="mailto:info@signtoseminar.com">Info</a><br></br>
-				 <a className="red-text" href="mailto:support@signtoseminar.com">Support</a><br></br>
-				 <a className="red-text" href="mailto:booking@signtoseminar.com">Booking</a>
+				 <h4>Booking</h4>
+
+				 <label for="input-name">Forname:</label>
+		         <input type="text" name="name" id="input-name" required></input><br></br>
+
+				 <label for="input-surname">Surname:</label>
+		         <input type="text" name="surname" id="input-surname" required></input><br></br>
+				 
+				 <label for="input-tel">Tele--Nr:</label>
+		         <input type="tel" name="tel" id="input-tel" required></input><br></br>
+
+				 <label for="input-email">@E-mail:</label>
+		         <input type="email" name="email" id="input-email" required></input><br></br>
+
+				 <button type="submit">Send Booking</button>
 			 </div>
 		</div>
 	  </div>

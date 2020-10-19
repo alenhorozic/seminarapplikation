@@ -19,13 +19,9 @@ export default function App() {
               <MenuLink link="/seminars" name="Seminars" />
               <MenuLink link="/infoSeminar" name="InfoSeminar" />     
         <Switch>
-          <Route path="/seminars">
-            <Seminars />
-          </Route>
+          <Route path="/seminars" component={Seminars} />
           <Route path="/infoSeminar/:id" component={InfoSeminar} />            
-          <Route path="/">
-            <HomePage />
-          </Route>
+          <Route path="/" component={HomePage} />
         </Switch>
       <Footer />
     </Router>
