@@ -10,6 +10,7 @@ import HomePage from "./views/homePage";
 import InfoSeminar from "./views/infoSeminar";
 import Seminars from "./views/seminars";
 import MenuLink from "./header/MenuLink/menuLink";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function App() {
   return (

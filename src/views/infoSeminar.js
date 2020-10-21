@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button, Form } from 'react-bootstrap';
 
 export default class InfoSeminar extends Component {
 	
@@ -49,21 +50,30 @@ export default class InfoSeminar extends Component {
                 <h4>Seats: {this.state.seminar.numberOfSeats}</h4> : null}
 			 </div>
 			 <div className="side-box" id="grid-b">
-				 <h4>Booking</h4>
+				 <h3>Booking </h3>
 
-				 <label for="input-name">Forname:</label>
-		         <input type="text" name="name" id="input-name" required></input><br></br>
+				<Form>
 
-				 <label for="input-surname">Surname:</label>
-		         <input type="text" name="surname" id="input-surname" required></input><br></br>
-				 
-				 <label for="input-tel">Tele--Nr:</label>
-		         <input type="tel" name="tel" id="input-tel" required></input><br></br>
+				 <Form.Group controlId="forname">
+                 <Form.Control size="sm" type="text" placeholder="Enter Forname" />
+                 </Form.Group>
 
-				 <label for="input-email">@E-mail:</label>
-		         <input type="email" name="email" id="input-email" required></input><br></br>
+				 <Form.Group controlId="surname">
+                 <Form.Control size="sm" type="text" placeholder="Enter Surname" />
+                 </Form.Group>
 
-				 <button type="submit">Send Booking</button>
+                 <Form.Group controlId="Email">
+                 <Form.Control size="sm" type="email" placeholder="Enter E-mail" />
+                 </Form.Group>
+
+				 <Form.Group controlId="phonrMumber">
+                 <Form.Control  size="sm" type="text" placeholder="Enter PhoneNr" />
+                 </Form.Group>
+
+                 <Button  size="sm" variant="primary" type="submit">
+                  Send Booking
+                 </Button>
+                </Form>
 			 </div>
 		</div>
 	  </div>
