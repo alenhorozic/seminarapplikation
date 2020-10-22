@@ -5,18 +5,23 @@ import  SearchField from '../searchField/searchField';
 export default class Seminars extends Component {
    constructor(props) {
       super(props);
-      this.state = {seminars: [], filtredSeminars: [{}]};
+      this.state = {seminars: [], filtredSeminars: []};
    }
    
    filter(filterText){
       var outSeminars = [];
       
       this.state.seminars.forEach(item => {
-         if(item.name.search(filterText) >= 0){
+         if(this.compereSearchText(item, filterText)){
              outSeminars.push(item);
          }
       });
      this.setState({filtredSeminars:outSeminars});
+   }
+   compereSearchText(item, filterText){
+      return(item.name.toLowerCase().search(filterText.toLowerCase()) >= 0 ||
+             item.topic.toLowerCase().search(filterText.toLowerCase()) >= 0
+      );
    }
    componentDidMount() {
       this.fetchSeminars();
@@ -35,7 +40,7 @@ export default class Seminars extends Component {
 	    <div className="column" id="column-grid">
 		     <div className="dark-box" id="grid-a">
                 <h1>Sing-To-Seminar</h1>
-                <SearchField handleSearchClick={(text) => this.filter(text)} />                
+                <SearchField handleSearchChange={(text) => this.filter(text)} />                
                 <ul>
                     {this.state.filtredSeminars.map((item) => (
                     <li key={item.id} ><Link className="red-text" to={`/infoSeminar/${item.id}`}>{item.name}</Link></li>

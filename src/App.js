@@ -11,6 +11,7 @@ import InfoSeminar from "./views/infoSeminar";
 import Seminars from "./views/seminars";
 import MenuLink from "./header/MenuLink/menuLink";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SeminarsAdministrator from "./views/seminarsAdministrator";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
               <MenuLink link="/seminars" name="Seminars" />
               <MenuLink link="/infoSeminar" name="InfoSeminar" />     
         <Switch>
+          <Route path="/seminarsAdministrator" component={SeminarsAdministrator} />
           <Route path="/seminars" component={Seminars} />
           <Route path="/infoSeminar/:id" component={InfoSeminar} />            
           <Route path="/" component={HomePage} />

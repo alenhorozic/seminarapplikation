@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form,Button } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 
 export default class SearchField extends Component {
     constructor(){
@@ -11,12 +11,9 @@ export default class SearchField extends Component {
             <div>
                 <Form>
                      <Form.Group controlId="phonrMumber">
-                         <Form.Control  size="sm" type="text" text={this.state.text} placeholder="Search" onChange={(e) => this.setState({text: e.target.value})} />
+                         <Form.Control  size="sm" type="text" text={this.state.text} placeholder="Search" onChange={(e) => {this.setState({text: e.target.value});
+                        this.props.handleSearchChange(e.target.value)}} />
                      </Form.Group>
-
-                        <Button  size="sm" variant="primary" onClick={() => this.props.handleSearchClick(this.state.text)}>
-                           Search
-                        </Button>
                 </Form>
             </div>
         );
