@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import  SearchField from '../searchField/searchField';
-import { Button, Table, Modal, Form} from 'react-bootstrap';
+import { Button, Table, Modal, Form, Card} from 'react-bootstrap';
 
 export default class SeminarsAdministrator extends Component {
    constructor(props) {
@@ -44,7 +44,7 @@ export default class SeminarsAdministrator extends Component {
    fetchSeminars() {
       fetch("https://localhost:5001/api/seminars/")
       .then((response)=>response.json())
-      .then((json)=>this.setState({seminars: json}))
+      .then((json)=>this.setState({seminars: json, filtredSeminars: json}))
    }
    handleClickEvent(id) {
       console.log(id);
@@ -57,16 +57,25 @@ export default class SeminarsAdministrator extends Component {
                 <h1>Sing-To-Seminar</h1>
                 <SearchField handleSearchChange={(text) => this.filter(text)} />
 
-                <Table variant="primary" responsive hover size ="sm" bordered>
+                <div class="table-wrapper-scroll-y my-custom-scrollbar" responsive hover size ="sm" bordered>
+                
+                <Card class="table-wrapper-scroll-y my-custom-scrollbar">
+                <Card.Body>
+
+                <Table class="table table-bordered table-striped mb-0" responsive hover size ="sm" bordered>
                         <thead>
                             
                             <tr>
                                 <th>Name</th>
+                                <th>Date and Time</th>
                             </tr>
                         </thead>
                         <tbody>
                         {this.state.filtredSeminars.map((item) => (
-                    <li key={item.id} ><Link className="red-text" to={`/infoSeminar/${item.id}`}>{item.name}</Link></li>
+                            <tr>
+                    <td><Link className="red-text" to={`/infoSeminarAdministrator/${item.id}`}>{item.name}</Link></td>
+                    <td>{item.dateAndTime}</td>
+                           </tr>
                     ))}
                         </tbody>
                     </Table>
@@ -74,7 +83,9 @@ export default class SeminarsAdministrator extends Component {
                         onClick={()=>this.showAddModal()}>
                          ADD Seminar
                     </Button>
-
+                    </Card.Body>
+                    </Card>
+                </div>
 			 </div>
 		</div>
         <Modal size="sl" centered show={this.state.addModal.visible}onHide={()=>this.setAddModalVisibleState(false)}>

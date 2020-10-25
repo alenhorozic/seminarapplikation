@@ -10,7 +10,7 @@ export default class SearchField extends Component {
         return (
             <div>
                 <Form>
-                     <Form.Group controlId="phonrMumber">
+                     <Form.Group controlId="searchField">
                          <Form.Control  size="sm" type="text" text={this.state.text} placeholder="Search" onChange={(e) => {this.setState({text: e.target.value});
                         this.props.handleSearchChange(e.target.value)}} />
                      </Form.Group>

@@ -103,7 +103,7 @@ body {
 	background-color: #05050590;
 	border:1px solid #ffffff;
 	font-size:25px;
-	padding:40px;
+	padding:20px;
 }
 .dark-box ul {
 	list-style-type: none;
@@ -126,6 +126,9 @@ body {
 }
 .side-box {
 	grid-area: "grid-b";
+}
+.side-box-button {
+	margin: 20px;
 }
 
 .footer {
@@ -163,6 +166,28 @@ body {
 	margin-top: 0;
 	margin-bottom: 0;
 }
+.my-custom-scrollbar {
+	position: relative;
+	height: 300px;
+	overflow: auto;
+	}
+	.table-wrapper-scroll-y {
+	display: block;
+	}
+	#column-grid-adm .dark-box {
+		background-color: #05050590;
+		border:1px solid #ffffff;
+		font-size:15px;
+		padding:10px;
+	}
+	#column-grid-adm {
+		display: grid;
+		grid-template-areas:"grid-a";
+		grid-template-columns: 100%;
+		align-content: space-between;
+		justify-content: space-between;
+		padding: 10px;
+	}
 @media (max-width: 1000px) {
 
 	.column {

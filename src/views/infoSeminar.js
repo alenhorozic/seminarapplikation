@@ -141,6 +141,9 @@ setAddBookingVisibleState(newState){
     ));
 }
 doAddBooking(){
+  if(!window.confirm('Are You Sure ?????')){
+    return;
+}
   var data = {
     name: this.state.addBooking.name,
     surname: this.state.addBooking.surname,
