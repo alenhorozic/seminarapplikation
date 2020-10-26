@@ -70,13 +70,13 @@ export default class InfoSeminarAdministrator extends Component {
                 <h4>Status: {this.state.seminar.status}</h4> : null}
 
                   <div  className="dark-box-button">
-                    <Button variant="primary" size="sm"
+                    <Button variant="primary" size="md" block
                         onClick={()=>this.showEditModalSeminar()}>
                          Edit Seminar
                     </Button>
                   </div>
                     <div  className="dark-box-button">
-                    <Button variant="primary" size="sm"
+                    <Button variant="danger" size="md" block
                         onClick={()=>this.deleteSeminar()}>
                          Delete Seminar
                     </Button>
@@ -139,7 +139,7 @@ export default class InfoSeminarAdministrator extends Component {
       
       <Modal size="sl" centered show={this.state.editModal.visible}onHide={()=>this.setEditModalVisibleState(false)}>
           <Modal.Header>
-              <Modal.Title>ADD New Seminar</Modal.Title>
+              <Modal.Title>Edit Seminar</Modal.Title>
           </Modal.Header>
           <Modal.Body>
               <Form.Group>

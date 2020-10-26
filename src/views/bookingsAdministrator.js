@@ -63,7 +63,7 @@ export default class BookingsAdministrator extends Component {
                         <tbody>
                         {this.state.filtredBookings.map((item) => (
                     <tr>
-                    <td><Link className="red-text" to={`/infoSeminar/${item.id}`}>{item.id}</Link></td>
+                    <td><Link className="red-text" to={`/infoBookingAdministrator/${item.id}`}>{item.id}</Link></td>
                     <td>{item.name}</td>
                     <td>{item.surname}</td>
                     <td>{item.createdAt.substring(0,10)}</td>

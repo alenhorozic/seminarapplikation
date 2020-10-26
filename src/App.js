@@ -14,6 +14,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import SeminarsAdministrator from "./views/seminarsAdministrator";
 import InfoSeminarAdministrator from "./views/infoSeminarAdministrator";
 import BookingsAdministrator from "./views/bookingsAdministrator";
+import InfoBookingAdministrator from "./views/infoBookingAdministrator";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
               <MenuLink link="/seminars" name="Seminars" />
               <MenuLink link="/infoSeminar" name="InfoSeminar" />     
         <Switch>
+          <Route path="/infoBookingAdministrator/:id" component={InfoBookingAdministrator} />
           <Route path="/bookingsAdministrator" component={BookingsAdministrator} />
           <Route path="/seminarsAdministrator" component={SeminarsAdministrator} />
           <Route path="/infoSeminarAdministrator/:id" component={InfoSeminarAdministrator} />

@@ -79,7 +79,7 @@ export default class SeminarsAdministrator extends Component {
                     ))}
                         </tbody>
                     </Table>
-                    <Button variant="primary" size="sm"
+                    <Button variant="primary" size="md" block
                         onClick={()=>this.showAddModal()}>
                          ADD Seminar
                     </Button>
@@ -191,6 +191,9 @@ export default class SeminarsAdministrator extends Component {
     ));
 }
 doAddSeminar(){
+    if(!window.confirm('Are Formuler Coorect ?????')){
+        return;
+    }
     var data = {
         name: this.state.addModal.name,
         topic: this.state.addModal.topic,
