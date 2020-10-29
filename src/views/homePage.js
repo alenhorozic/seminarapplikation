@@ -5,7 +5,7 @@ export default function HomePage() {
         <div className="page" id="pocetna"> 
 	        <div className="column" id="column-grid">
 		        <div className="dark-box" id="grid-a">
-				   <h1>Sing-To-Seminar</h1>
+				   <h1>Sign-To-Seminar</h1>
 			       <p>Like administrator you can create new seminar, edit seminar and se all bookd visitors
                    you can edit seminar</p>
 			       <p>Like visitor you can se all komming seminar and se info about this 

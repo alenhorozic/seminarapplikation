@@ -12,8 +12,8 @@ export default function footer() {
 			 
 			  <div className="footer-column align-center">
 			     &copy; 2020<br></br>
-				  Sing To Seminar<br></br>
-				  www.singtoseminar.com
+				  Sign To Seminar<br></br>
+				  www.signtoseminar.com
 			  </div>
 			 
 			  <div className="footer-column align-right">

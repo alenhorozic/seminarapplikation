@@ -16,7 +16,7 @@ export default class  Header extends Component {
           </div>
 
           <div id="titel-holder">
-            <h1>Sing To Seminar</h1>
+            <h1>Sign To Seminar</h1>
           </div>
 
           <div id="social-holder">

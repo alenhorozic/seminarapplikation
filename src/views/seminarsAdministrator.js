@@ -212,6 +212,7 @@ doAddSeminar(){
     },
     body: JSON.stringify(data),
     })
+    .then(()=> this.fetchSeminars())
     .catch((error) => {
       console.error('Error:NOT IS WRONG', error);
     });

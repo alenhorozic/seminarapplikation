@@ -279,6 +279,7 @@ deleteSeminar(){
   'Content-Type': 'application/json',
   }
   })
+  
   .catch((error) => {
     console.error('Error:NOT IS WRONG', error);
   });
@@ -339,9 +340,11 @@ doEditSeminar(){
   },
   body: JSON.stringify(editdData),
   })
+  .then(() =>this.fetchSeminar())
   .catch((error) => {
     console.error('Error:NOT IS WRONG', error);
   });
   this.setEditModalVisibleState(false);
+ /* window.location.reload(); */
 }
 }

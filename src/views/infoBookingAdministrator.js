@@ -166,6 +166,7 @@ doEditBooking(){
   },
   body: JSON.stringify(data),
   })
+  .then(() => this.fetchBooking())
   .catch((error) => {
     console.error('Error:NOT IS WRONG', error);
   });
