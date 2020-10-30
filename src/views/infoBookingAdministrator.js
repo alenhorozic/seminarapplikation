@@ -13,7 +13,6 @@ export default class InfoBookingAdministrator extends Component {
         surname:"",
         email:"",
         phone:"",
-        seminarId:0,
     }
     };
 	 }
@@ -25,7 +24,7 @@ export default class InfoBookingAdministrator extends Component {
 		fetch("https://localhost:5001/api/booking/" + this.state.params.id)
 		.then((response)=>response.json())
 		.then((json)=>this.setState({booking: json,}));
-		 }
+		}
 
 	render(){
     return (
@@ -100,13 +99,6 @@ export default class InfoBookingAdministrator extends Component {
                   onChange={(e) =>this.setEditBookingStringFildState("phone",e.target.value)}>
                   </Form.Control>
               </Form.Group>
-
-              <Form.Group>
-                  <Form.Label htmlFor="seminarId">Seminar Id</Form.Label>
-                  <Form.Control id="seminarId" type="number" value={this.state.editBooking.seminarId.toString()}
-                  onChange={(e) =>this.setEditBookingNumberFildState("seminarId",e.target.value)}>
-                  </Form.Control>
-              </Form.Group>
               
                 <Button className="btn  btn-primary btn-block"
                   onClick={()=>this.doEditBooking()}>
@@ -116,14 +108,34 @@ export default class InfoBookingAdministrator extends Component {
       </Modal>
 
 	</div>
-	)
-  }/*EDIT BOOKING ADMINISTRATOR starts heare*/
+  )
+  }
+  /*delete bookong*/
+  deleteBooking(){
+    if(!window.confirm('Are You Sure ????? All Bookings Data Will Be Loost')){
+      return;
+  }
+       var url ="https://localhost:5001/api/booking/" + this.state.params.id;
+    fetch(url, {
+    method: 'DELETE', // DELETE
+    headers: {
+    'Content-Type': 'application/json',
+    }
+    })
+    .then(()=>this.fetchBooking())
+    .catch((error) => {
+      console.error('Error:NOT IS WRONG', error);
+    })
+    window.location.reload();
+  }
+  
+  
+  /*EDIT BOOKING ADMINISTRATOR starts heare*/
   showEditBooking(){
     this.setEditBookingStringFildState('name',this.state.booking.name);
     this.setEditBookingStringFildState('surname',this.state.booking.surname);
     this.setEditBookingStringFildState('email',this.state.booking.email);
     this.setEditBookingStringFildState('phone',this.state.booking.phone);
-    this.setEditBookingNumberFildState("seminarId",this.state.booking.seminarId);
     this.setEditBookingVisibleState(true);
 }
 setEditBookingVisibleState(newState){
@@ -156,7 +168,6 @@ doEditBooking(){
     surname: this.state.editBooking.surname,
     email: this.state.editBooking.email,
     phone: this.state.editBooking.phone,
-    seminarId: this.state.editBooking.seminarId,
      };
      var url ='https://localhost:5001/api/booking/'+ this.state.params.id;
   fetch(url, {
@@ -171,20 +182,5 @@ doEditBooking(){
     console.error('Error:NOT IS WRONG', error);
   });
   this.setEditBookingVisibleState(false);
-}/*DELETE SEMINAR*/
-deleteBooking(){
-  if(!window.confirm('Are You Sure ????? You Wont To Delete Booking')){
-    return;
-}
-     var url ="https://localhost:5001/api/booking/" + this.state.params.id;
-  fetch(url, {
-  method: 'DELETE', // DELETE
-  headers: {
-  'Content-Type': 'application/json',
-  }
-  })
-  .catch((error) => {
-    console.error('Error:NOT IS WRONG', error);
-  });
 }
 }

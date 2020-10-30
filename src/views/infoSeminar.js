@@ -112,7 +112,7 @@ export default class InfoSeminar extends Component {
 	)
   }
   showAddBooking(){
-    this.setAddBookingStringFildState('forname','');
+    this.setAddBookingStringFildState('name','');
     this.setAddBookingStringFildState('surname','');
     this.setAddBookingStringFildState('email','');
     this.setAddBookingStringFildState('phone','');

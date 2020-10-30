@@ -216,7 +216,7 @@ export default class InfoSeminarAdministrator extends Component {
 	)
   }/*ADD BOOKING ADMINISTRATOR starts heare*/
   showAddBooking(){
-    this.setAddBookingStringFildState('forname','');
+    this.setAddBookingStringFildState('name','');
     this.setAddBookingStringFildState('surname','');
     this.setAddBookingStringFildState('email','');
     this.setAddBookingStringFildState('phone','');
@@ -279,10 +279,10 @@ deleteSeminar(){
   'Content-Type': 'application/json',
   }
   })
-  
   .catch((error) => {
     console.error('Error:NOT IS WRONG', error);
-  });
+  })
+  window.location.reload();
 }/*EDIT SEMINAR*/
 showEditModalSeminar(){
   this.setEditModalStringFildState('name',this.state.seminar.name);

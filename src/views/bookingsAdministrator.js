@@ -57,7 +57,6 @@ export default class BookingsAdministrator extends Component {
                                 <th>Email</th>
                                 <th>Phone</th>
                                 <th>Seminar Id</th>
-                                <th>#</th>
                             </tr>
                         </thead>
                         <tbody>
